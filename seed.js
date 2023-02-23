@@ -1,5 +1,5 @@
 const { db, User, Movie } = require("./server/db");
-const {red,green} = require('chalk');
+// const {red,green} = require('chalk');
 
 const movies_info = [
   {
@@ -399,7 +399,7 @@ const seed = async() => {
       })
     )
   } catch (err) {
-  console.log('err')
+  console.log(err)
   }
 }
 
@@ -408,11 +408,11 @@ module.exports = seed;
 if(require.main === module) {
   seed()
   .then(() => {
-    console.log(green('Seeding success'));
+    console.log(('Seeding success!'));
     db.close()
   })
   .catch((err) => {
-    console.error(red('something went wrong!'))
+    console.error(('something went wrong!'))
     console.error(err);
     db.close()
   });
